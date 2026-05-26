@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Портфолио видеомонтажера | Имя Фамилия</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #0a0a0a;
+            color: #f0f0f0;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Шапка */
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            border-bottom: 1px solid #2c2c2c;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #ffffff, #b8860b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Секция обо мне */
+        .about {
+            background: #111;
+            border-radius: 32px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px solid #2a2a2a;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 10px auto 0;
+            color: #ccc;
+        }
+
+        /* Сетка видео */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .video-card {
+            background: #0f0f0f;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #2c2c2c;
+        }
+
+        .video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.6);
+            border-color: #b8860b;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            background: #000;
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Контакты и соцсети */
+        .contact {
+            background: linear-gradient(145deg, #0e0e0e, #080808);
+            border-radius: 40px;
+            padding: 40px 30px;
+            margin: 50px 0 40px;
+            text-align: center;
+            border: 1px solid #2c2c2c;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #1c1c1c;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 1px solid #3a3a3a;
+        }
+
+        .btn:hover {
+            background: #b8860b;
+            border-color: #d49c2e;
+            transform: scale(1.02);
+        }
+
+        /* Подвал */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #1f1f1f;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 16px;
+            }
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ИМЯ ФАМИЛИЯ</h1>
+            <div class="tagline">Видеомонтажер | Motion design | Color grading</div>
+        </header>
+
+        <section class="about">
+            <p>🎬 Превращаю сырой материал в эмоциональное, динамичное видео. Работаю с рекламой, клипами, свадебными фильмами и соцсетями. Быстро, чисто, с вниманием к деталям.</p>
+        </section>
+
+        <h2 style="margin-bottom: 20px; font-size: 1.8rem;">🎥 Мои работы</h2>
+        <div class="video-grid">
+            <!-- 
+                👇 ЗДЕСЬ ЗАМЕНИ ССЫЛКИ НА СВОИ ВИДЕО
+                КАК ВСТАВИТЬ СВОЁ ВИДЕО:
+                1. Загрузи на YouTube
+                2. Нажми "Поделиться" → "Встроить"
+                3. Скопируй ссылку из src="..." (пример: https://www.youtube.com/embed/abcd1234)
+                4. Вставь её вместо моего примера ниже
+            -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Видео 1" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Ролик для бренда</h3>
+                    <p>Динамичный монтаж / реклама 30 сек</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Видео 2" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Музыкальный клип</h3>
+                    <p>Съёмка + постпродакшн, цветокоррекция</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Видео 3" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Свадебный highlight</h3>
+                    <p>Атмосферный монтаж под музыку</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="contact">
+            <h2>📞 Связаться со мной</h2>
+            <p>Напишите в мессенджер — обсужу задачу, сроки и стоимость. Всегда на связи.</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/71234567890" target="_blank" class="btn">📱 WhatsApp</a>
+                <a href="https://t.me/telegram_username" target="_blank" class="btn">✈️ Telegram</a>
+                <a href="mailto:your@email.com" class="btn">📧 Email</a>
+            </div>
+        </section>
+
+        <footer>
+            © 2025 — Портфолио видеомонтажера. Все проекты выполнены лично.
+        </footer>
+    </div>
+
+    <script>
+        // Простая защита от дублирования (не блокирует работу)
+        console.log('Сайт-портфолио видеомонтажера загружен');
+    </script>
+</body>
+</html>
