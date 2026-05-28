@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Портфолио видеомонтажера | Имя Фамилия</title>
+    <title>Портфолио видеомонтажера | Добро пожаловать! </title>
     <style>
         * {
             margin: 0;
@@ -25,7 +25,6 @@
             padding: 20px;
         }
 
-        /* Шапка */
         header {
             text-align: center;
             padding: 40px 20px 20px;
@@ -48,7 +47,6 @@
             margin: 0 auto;
         }
 
-        /* Секция обо мне */
         .about {
             background: #111;
             border-radius: 32px;
@@ -62,6 +60,38 @@
             max-width: 700px;
             margin: 10px auto 0;
             color: #ccc;
+        }
+
+        /* Кнопки фильтрации */
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .filter-btn {
+            background: #1c1c1c;
+            border: 1px solid #3a3a3a;
+            color: #f0f0f0;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            background: #2c2c2c;
+            border-color: #b8860b;
+        }
+
+        .filter-btn.active {
+            background: #b8860b;
+            border-color: #d49c2e;
+            color: white;
         }
 
         /* Сетка видео */
@@ -89,17 +119,19 @@
         .video-wrapper {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 */
             background: #000;
         }
 
-        .video-wrapper iframe,
+        /* Для вертикальных видео */
+        .video-card.vertical .video-wrapper {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
         .video-wrapper video {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
+            height: auto;
+            display: block;
             border: none;
         }
 
@@ -117,7 +149,6 @@
             font-size: 0.9rem;
         }
 
-        /* Контакты и соцсети */
         .contact {
             background: linear-gradient(145deg, #0e0e0e, #080808);
             border-radius: 40px;
@@ -160,7 +191,6 @@
             transform: scale(1.02);
         }
 
-        /* Подвал */
         footer {
             text-align: center;
             padding: 30px 20px;
@@ -179,79 +209,308 @@
             .btn {
                 padding: 10px 20px;
             }
+            .filter-btn {
+                padding: 8px 18px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>ИМЯ ФАМИЛИЯ</h1>
-            <div class="tagline">Видеомонтажер | Motion design | Color grading</div>
+            <h1>Добро пожаловать!</h1>
+            <div class="tagline">Видеомонтажер | Motion design | Сценарист</div>
         </header>
 
         <section class="about">
-            <p>🎬 Превращаю сырой материал в эмоциональное, динамичное видео. Работаю с рекламой, клипами, свадебными фильмами и соцсетями. Быстро, чисто, с вниманием к деталям.</p>
+            <p>🎬 🎬 Монтирую рилсы для соцсетей, анимацию логотипов, клипы и рекламные ролики. Работаю с вертикальным и горизонтальным форматом. Быстро, чисто, с душой.
+
+</p>
         </section>
 
-        <h2 style="margin-bottom: 20px; font-size: 1.8rem;">🎥 Мои работы</h2>
+        <h2 style="margin-bottom: 10px; font-size: 1.8rem;">🎥 Мои работы</h2>
+        
+        <!-- Кнопки фильтрации -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="vertical">Вертикальный формат</button>
+            <button class="filter-btn" data-filter="horizontal">Горизонтальный формат</button>
+            <button class="filter-btn" data-filter="logo">Анимация логотипов</button>
+        </div>
+
+        <!-- Сетка с видео -->
         <div class="video-grid">
             <!-- 
-                👇 ЗДЕСЬ ЗАМЕНИ ССЫЛКИ НА СВОИ ВИДЕО
-                КАК ВСТАВИТЬ СВОЁ ВИДЕО:
-                1. Загрузи на YouTube
-                2. Нажми "Поделиться" → "Встроить"
-                3. Скопируй ссылку из src="..." (пример: https://www.youtube.com/embed/abcd1234)
-                4. Вставь её вместо моего примера ниже
+                👇 КАК ДОБАВИТЬ СВОЁ ВИДЕО:
+                1. Положи файл .mp4 в ту же папку, что и index.html
+                2. Скопируй блок ниже и вставь
+                3. Замени "video.mp4" на имя твоего файла (например "my-video.mp4")
+                4. Укажи правильный data-category: 
+                   - vertical (вертикальное)
+                   - horizontal (горизонтальное)
+                   - logo (анимация логотипов)
+                5. Напиши название и описание
             -->
-            <div class="video-card">
+
+                        <!-- Вертикальные видео -->
+            <div class="video-card" data-category="vertical">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Видео 1" allowfullscreen></iframe>
+                    <video controls preload="metadata">
+                        <source src="vertical1.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
                 </div>
                 <div class="card-content">
-                    <h3>Ролик для бренда</h3>
-                    <p>Динамичный монтаж / реклама 30 сек</p>
+                    <h3>Работа с нейросетью на английском языке.
+400р</h3>
+                    <p>Вертикальный формат • Instagram/TikTok</p>
                 </div>
             </div>
 
-            <div class="video-card">
+            <div class="video-card" data-category="vertical">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Видео 2" allowfullscreen></iframe>
+                    <video controls preload="metadata">
+                        <source src="vertical2.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
                 </div>
                 <div class="card-content">
-                    <h3>Музыкальный клип</h3>
-                    <p>Съёмка + постпродакшн, цветокоррекция</p>
+                    <h3>Работа с ютуб подкастом.
+200р</h3>
+                    <p>Вертикальный формат • Instagram/TikTok</p>
                 </div>
             </div>
 
-            <div class="video-card">
+            <div class="video-card" data-category="vertical">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Видео 3" allowfullscreen></iframe>
+                    <video controls preload="metadata">
+                        <source src="vertical3.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
                 </div>
                 <div class="card-content">
-                    <h3>Свадебный highlight</h3>
-                    <p>Атмосферный монтаж под музыку</p>
+                    <h3>Работа про нейросети.
+500р</h3>
+                    <p>Вертикальный формат • Instagram/TikTok</p>
                 </div>
             </div>
+
+            <div class="video-card" data-category="vertical">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="vertical4.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Работа про аккаунты.
+500р</h3>
+                    <p>Вертикальный формат • Instagram/TikTok</p>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="vertical">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="vertical5.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Видео г.Мурманск. Кадры с базы отдыха.
+300р</h3>
+                    <p>Вертикальный формат • Instagram/TikTok</p>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="vertical">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="vertical6.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Работа с косметологией.
+400р</h3>
+                    <p>Вертикальный формат • Instagram/TikTok</p>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="vertical">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="vertical7.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Работа про UGC контент.
+400р</h3>
+                    <p>Вертикальный формат • Instagram/TikTok</p>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="vertical">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="vertical8.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Работа про алгоритмы видео.
+600р</h3>
+                    <p>Вертикальный формат • Instagram/TikTok</p>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="vertical">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="vertical9.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Работа с подкастом.
+500р</h3>
+                    <p>Вертикальный формат • Instagram/TikTok</p>
+                </div>
+            </div>
+
+            <!-- Пример горизонтального видео -->
+            <div class="video-card" data-category="horizontal">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="horizontal.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Фрагмент видео. Работа для канала "ФАУСТ".
+1 минута - 600р</h3>
+                    <p>Горизонтальный формат • 30 сек • YouTube</p>
+                </div>
+            </div>
+
+                        <!-- Анимация логотипов -->
+            <div class="video-card" data-category="logo">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="logo1.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Быстрая анимация для бренда.
+200р</h3>
+                    <p>Motion design • 2D логотип</p>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="logo">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="logo2.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Плавная премиум анимация для логотипа автомобилей.
+1200р</h3>
+                    <p>Motion design • 2D логотип</p>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="logo">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="logo3.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Анимация падения с проявлением логотипа(текста).
+600р</h3>
+                    <p>Motion design • 2D логотип</p>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="logo">
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="logo4.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Анимация логотипа нейросети дипсик.
+800р</h3>
+                    <p>Motion design • 2D логотип</p>
+                </div>
+            </div>
+
+            <!-- 
+                👇 СЮДА ДОБАВЛЯЙ СВОИ ВИДЕО (копируй этот блок и меняй):
+                
+                <div class="video-card" data-category="vertical">
+                    <div class="video-wrapper">
+                        <video controls preload="metadata">
+                            <source src="твой-файл.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-content">
+                        <h3>Название работы</h3>
+                        <p>Описание работы</p>
+                    </div>
+                </div>
+            -->
         </div>
 
         <section class="contact">
             <h2>📞 Связаться со мной</h2>
             <p>Напишите в мессенджер — обсужу задачу, сроки и стоимость. Всегда на связи.</p>
             <div class="contact-buttons">
-                <a href="https://wa.me/71234567890" target="_blank" class="btn">📱 WhatsApp</a>
-                <a href="https://t.me/telegram_username" target="_blank" class="btn">✈️ Telegram</a>
+                <a href="https://wa.me/79531037750" target="_blank" class="btn">📱 WhatsApp</a>
+                <a href="https://t.me/Jack3Hanma" target="_blank" class="btn">✈️ Telegram</a>
                 <a href="mailto:your@email.com" class="btn">📧 Email</a>
             </div>
         </section>
 
         <footer>
-            © 2025 — Портфолио видеомонтажера. Все проекты выполнены лично.
+            © 2026 — Портфолио видеомонтажера. Все проекты выполнены лично.
         </footer>
     </div>
 
     <script>
-        // Простая защита от дублирования (не блокирует работу)
-        console.log('Сайт-портфолио видеомонтажера загружен');
+        // Фильтрация видео по категориям
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const videoCards = document.querySelectorAll('.video-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Убираем активный класс у всех кнопок
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Добавляем активный класс нажатой кнопке
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                videoCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
